@@ -3,9 +3,18 @@ from turtle import Turtle, Screen
 
 screen = Screen()
 screen.setup(width=500, height=400)
-user_bet = screen.textinput(title="Make your bet", prompt="Which ninja turtle do you believe will win the bet? "
+user_bet = screen.textinput(title="Make your bet", prompt="Which ninja turtle do you believe will win the race? "
                                                           "Enter a color: ")
-tim = Turtle()
+colors = ["red", "orange", "purple", "blue", "green"]
+
+starting_point = -100
+
+for i in range(len(colors)):
+    tim = Turtle("turtle")
+    tim.color(colors[i])
+    tim.penup()
+    tim.goto(x=-230, y=starting_point)
+    starting_point += 50
 
 
 screen.exitonclick()
